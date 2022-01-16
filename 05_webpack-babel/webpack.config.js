@@ -45,6 +45,10 @@ module.exports = {
         generator: {
           filename: 'font/[name]-[hash:6][ext]'
         }
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader'
       }
     ]
   },
