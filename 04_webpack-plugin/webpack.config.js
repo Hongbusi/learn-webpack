@@ -5,6 +5,12 @@ const { DefinePlugin } = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+  // 设置模式
+  // development
+  // production
+  mode: 'development',
+  // 设置 source-map，建立 js 映射文件，方便调试代码和错误
+  devtool: 'source-map',
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -29,7 +35,7 @@ module.exports = {
         },
         parser: {
           dataUrlCondition: {
-            maxSize: 100 * 1024
+            maxSize: 10 * 1024
           }
         }
       },
