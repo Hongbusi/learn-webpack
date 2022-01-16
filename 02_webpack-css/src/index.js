@@ -1,3 +1,1 @@
-import { test } from './js/test';
-
-test();
+import './js/element';

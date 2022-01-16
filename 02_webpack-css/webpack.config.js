@@ -4,6 +4,19 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'build.js'
+    filename: 'main.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(css|less)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader',
+          'postcss-loader'
+        ]
+      }
+    ]
   }
 }
