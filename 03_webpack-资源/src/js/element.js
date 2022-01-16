@@ -2,7 +2,7 @@ import '../css/style.css';
 import '../css/title.less';
 import '../css/image.css';
 
-import logo from '../img/logo.png'
+import logo from '../img/logo.png';
 
 const divEl = document.createElement('div');
 divEl.className = 'title';
