@@ -6,11 +6,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader/dist/index');
 
 module.exports = {
-  // 设置模式
-  // development
-  // production
+  target: 'web',
   mode: 'development',
-  // 设置 source-map，建立 js 映射文件，方便调试代码和错误
   devtool: 'source-map',
   entry: './src/main.js',
   output: {
@@ -18,7 +15,8 @@ module.exports = {
     filename: 'js/build.js',
   },
   devServer: {
-    static: path.resolve(__dirname, './public')
+    static: path.resolve(__dirname, './public'),
+    hot: true
   },
   module: {
     rules: [
