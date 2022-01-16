@@ -53,6 +53,22 @@ module.exports = {
             maxSize: 100 * 1024
           }
         }
+      },
+      // {
+      //   test: /\.(eoc|ttf|woff2?)$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: 'font/[name]-[hash:6].[ext]'
+      //     }
+      //   }
+      // },
+      {
+        test: /\.(eoc|ttf|woff2?)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'font/[name]-[hash:6][ext]'
+        }
       }
     ]
   }
