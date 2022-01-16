@@ -17,13 +17,26 @@ module.exports = {
           'postcss-loader'
         ]
       },
+      // file-loader
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       outputPath: 'img',
+      //       name: '[name]-[hash:6].[ext]'
+      //     }
+      //   }
+      // },
+      // url-loader
       {
         test: /\.(jpe?g|png|gif|svg)$/,
         use: {
-          loader: 'file-loader',
+          loader: 'url-loader',
           options: {
             outputPath: 'img',
-            name: '[name]-[hash:6].[ext]'
+            name: '[name]-[hash:6].[ext]',
+            limit: 100 * 1024
           }
         }
       }
