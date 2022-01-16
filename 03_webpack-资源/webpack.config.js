@@ -16,6 +16,16 @@ module.exports = {
           'less-loader',
           'postcss-loader'
         ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'img',
+            name: '[name]-[hash:6].[ext]'
+          }
+        }
       }
     ]
   }
