@@ -25,5 +25,3 @@ document.body.appendChild(divEl);
 document.body.appendChild(bgDivEl);
 document.body.appendChild(imgEl);
 document.body.appendChild(iEl);
-
-console.log('update');
