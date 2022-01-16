@@ -1,11 +1,13 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { DefinePlugin } = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'main.js',
+    filename: 'js/main.js',
   },
   module: {
     rules: [
@@ -40,6 +42,13 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      title: 'Hongbusi'
+    }),
+    new DefinePlugin({
+      BASE_URL: '"./"'
+    })
   ]
 }
