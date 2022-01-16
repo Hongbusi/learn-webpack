@@ -4,7 +4,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'main.js'
+    filename: 'main.js',
+    // assetModuleFilename: 'img/[name]-[hash:6].[ext]'
   },
   module: {
     rules: [
@@ -29,14 +30,27 @@ module.exports = {
       //   }
       // },
       // url-loader
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/,
+      //   use: {
+      //     loader: 'url-loader',
+      //     options: {
+      //       outputPath: 'img',
+      //       name: '[name]-[hash:6].[ext]',
+      //       limit: 100 * 1024
+      //     }
+      //   }
+      // },
+      // asset module type
       {
         test: /\.(jpe?g|png|gif|svg)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            outputPath: 'img',
-            name: '[name]-[hash:6].[ext]',
-            limit: 100 * 1024
+        type: 'asset',
+        generator: {
+          filename: 'img/[name]-[hash:6][ext]'
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 100 * 1024
           }
         }
       }
