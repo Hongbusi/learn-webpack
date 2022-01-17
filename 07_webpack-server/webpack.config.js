@@ -31,6 +31,14 @@ module.exports = {
       }
     }
   },
+  resolve: {
+    extensions: ['.wasm', '.mjs', '.js', '.json', '.vue', '.ts'],
+    mainFiles: ['index'],
+    modules: ['node_modules'],
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+  },
   module: {
     rules: [
       {
