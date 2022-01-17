@@ -16,7 +16,20 @@ module.exports = {
   },
   devServer: {
     static: path.resolve(__dirname, './public'),
-    hot: true
+    hot: true,
+    // host: '0.0.0.0',
+    port: 7777,
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8888',
+        pathRewrite: {
+          '^/api': ''
+        },
+        secure: false,
+        changeOrigin: true
+      }
+    }
   },
   module: {
     rules: [
