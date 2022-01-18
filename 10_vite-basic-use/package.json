@@ -10,7 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash-es": "^4.17.21"
+    "@vitejs/plugin-vue": "^2.0.1",
+    "@vue/compiler-sfc": "^3.2.27",
+    "lodash-es": "^4.17.21",
+    "vue": "^3.2.27"
   },
   "devDependencies": {
     "less": "^4.1.2",
